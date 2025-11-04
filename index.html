@@ -1,51 +1,308 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <header id="Contactos">
-            Contacto
-            <section>
-                <ul>
-                    <li>Nombre: Genesis Vasconez</li>
-                    <li>Telefono: xxxxxxxx</li>
-                    <li>Correo: daenv@otulook.com</li>
-                    <li><a href="index.html#Experiencia">Mi EXPERIENCIA</a></li>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Genesis Daena Vasconez Escobar</title>
+  <style>
+    body{
+      background:#f2f7f6;
+      color:black;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height:1.6;
+    }
 
-                </ul>
-            </section>
-        </header>
-        <main>
-            <section id="InformacionGeneral">
-                <h3>Informacion General</h3>
-                <b>Génesis Vásconez</b><br>
-                <img src="./img/perfil.jpeg"
-                    alt="Fotografía de Génesis Vásconez perfil" width="155"
-                    height="180">
-                <p>
-                    Sobre mi
-                    <p>
-                        Formación:
-                    </p>
-                </p>
+    header, section{
+      margin: 0 auto;
+      padding: 10px;
+      color: #464646e7;
+    }
 
-                <!-- USAR ESQUEMA ESO ,QUE VA EN LA URL PARA QUE NAVEGUE EN LA MISMA PAGINA-->
-            </section>
-            <section id="Experiencia">
-                <h3>Experiencia</h3>
-                <p>
-                    Cursos:
-                </p>
-                <ul>
-                    <li> Curso en</li>
-                </ul>
-            </section>
-            <article id="Portafolio">
-                <b>Portafolio</b>
-            </article>
-        </main>
-    </body>
+    h1{margin:0;}
+    h2{margin-bottom:8px; color: rgb(146, 109, 76)}
+    h3{margin:0;color: rgba(124, 102, 80, 0.822);}
+
+    /* ======== ENCABEZADO ======== */
+    .title{
+      display:flex;
+      flex-direction: column;
+      background-color: #5d656d13;
+      padding: 16px;
+      border-radius: 4px;   
+      margin-bottom: 4px;
+      margin-top: 4px;
+    }
+    .rol{font-size:0.95rem;color:#555;}
+    small{color:#777;}
+    nav a{
+      color:#287d99;
+      text-decoration:none;
+      margin-right:14px;
+    }
+    nav a:hover{text-decoration:underline; color: rgba(128, 0, 128, 0.589)}
+
+    /* ======== PERFIL ======== */
+    .perfil{
+      display:grid;
+      grid-template-columns:160px 1fr;
+      gap:16px;
+      background:#e8f4f8;
+      border:1px solid #c0bfbf;
+      border-radius:8px;
+      padding:14px;
+      text-align: justify;
+    }
+    .perfil img{
+      width:150px;
+      height:auto;
+      border-radius:8px;
+      border:1px solid #ccc;
+    }
+
+    .caja {
+      background: #ffffffde;
+      border: 1px solid #d6d6d6;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+
+    .chip{
+  padding: 6px 10px;
+  border: 1px solid #d0d5d9;
+  border-radius: 999px;  /* redondeado total */
+  background: #fff;
+  font-size: 15px;
+  color: #444;
+  box-shadow: 0 1px 0 rgba(0,0,0,.03);
+  margin-right: 10px;
+}
+
+    /* ======== ETIQUETAS ======== */
+    .tag{
+      background:#f4f4f4;
+      padding:2px 8px;
+      border-radius:8px;
+      font-size:12px;
+      color:#333;
+      border:1px solid #ccc;
+    }
+
+    /* ======== TARJETAS PORTAFOLIO ======== */
+    .cards{display:grid;gap:15px;}
+    .card{
+      border:1px solid #ccc;
+      border-radius:10px;
+      background:#fff;
+      overflow:hidden;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      text-align: justify;
+    }
+    .card:hover{
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      transform:translateY(-1px);
+    }
+    .card-head{
+      display:flex;
+      gap:12px;
+      padding:12px;
+    }
+    .img{
+      width:180px;
+      height:120px;
+      object-fit:cover;
+      border-radius:8px;
+      border:1px solid #ccc;
+    }
+    .desc{
+      max-height:0;
+      overflow:hidden;
+      padding:0 12px;
+      transition:max-height 0.3s ease, padding 0.2s ease;
+    }
+    .card:hover .desc{
+      max-height:260px;
+      padding:12px;
+    }
+
+    /* ======== IDIOMAS ======== */
+    .idiomas{
+      border:1px solid #ccc;
+      border-radius:8px;
+      padding:12px;
+      background:#fff;
+      width:fit-content;
+    }
+
+    /* ======== BOTÓN VOLVER ARRIBA ======== */
+    .backtop{
+      display:inline-block;
+      margin-top:10px;
+      color:#287d99;
+      text-decoration:none;
+    }
+    .backtop:hover{text-decoration:underline;color: rgba(128, 0, 128, 0.589)}
+  </style>
+</head>
+<body>
+
+  <header id="contacto" class="container">
+    <div class="title">
+      <h1>Génesis Daena Vásconez Escobar</h1>
+      <span class="rol">Estudiante</span>
+      <small>Quito, Ecuador</small>
+    </div>
+
+    <nav aria-label="Navegación principal">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#idiomas">Idiomas</a>
+      <a href="#formacion">Formación</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#proyectos">Portafolio</a>
+    </nav>
+
+    <hr>
+  </header>
+
+  <section id="sobre-mi" class="container">
+    <h2>Información Personal</h2>
+    <div class="perfil">
+      <img src="./img/perfil.jpeg" alt="Fotografía de perfil de Genesis Daena Vasconez Escobar">
+      <p>
+        Me destaco por ser responsable, organizada y colaborativa, con una sólida capacidad de razonamiento lógico y
+        resolución creativa de problemas. Poseo conocimientos en Java y Python, e interés en el desarrollo de
+        soluciones tecnológicas éticas e innovadoras. Tengo gran entusiasmo por aprender, crecer profesionalmente y
+        contribuir en proyectos reales que impulsen el avance tecnológico.
+      </p>
+    </div>
+  </section>
+
+  <section id="idiomas" class="container">
+    <h2>Idiomas</h2>
+    <div class="caja">
+        <span class="chip">Inglés (B2)</span>
+        <span class="chip">Francés (A2)</span>
+        <span class="chip">Español (nativo)</span>
+    </div>
+  </section>
+
+  <section id="formacion" class="container">
+    <h2>Experiencia</h2>
+    <div class="caja">
+      <h3>Formación</h3>
+      <ul>
+        <li>
+          <b>Ingeniería en Software</b>, Escuela Politécnica Nacional
+          <span class="tag">(Nov 2022 - Presente)</span><br>
+          Actualmente cursando sexto semestre de Ingeniería en Software.
+        </li>
+        <li>
+          <b>Bachillerato General Unificado</b>, Unidad Educativa Santo Domingo de Guzmán, Ambato
+          <span class="tag">(Sep 2016 - Jul 2022)</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="cursos" class="container">
+    <div class="caja">
+      <h3>Cursos</h3>
+      <ul>
+        <li>AWS Cloud Technical Essentials, Coursera <span class="tag">(Mar 2025)</span></li>
+        <li>What is Data Science, Coursera <span class="tag">(Abr 2025)</span></li>
+        <li>AWS Cloud Practitioner Essentials, AWS Skill Builder <span class="tag">(Oct 2025)</span></li>
+        <li>Tools for Data Science, Coursera <span class="tag">(Oct 2025)</span></li>
+        <li>Python, Udemy <span class="tag">(Oct 2025)</span></li>
+        <li>Oratoria, Academia Purista de Oratoria <span class="tag">(Ago 2025)</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="proyectos" class="container">
+    <h2>Portafolio de Proyectos Académicos</h2>
+
+    <div class="cards">
+      <!-- 1. DarkBit interactive -->
+      <article class="card">
+        <div class="card-head">
+          <img class="img" src="./img/darkbit.png" alt="DarkBit interactive — escenario y animatrónicos">
+          <h3>Proyecto prototipo DarkBit interactive</h3>
+        </div>
+        <div class="desc">
+          <p>
+            Recreación interactiva inspirada en Five Nights at Freddy’s. Ubicación y configuración de animatrónicos,
+            desarrollo de secuencias de animación y optimización visual mediante mapas de textura de iluminación.
+            Ajuste de timing, coordinación con cámaras/viewport y pruebas de rendimiento para coherencia entre escenas.</p>
+            <i>Habilidades:</i> diseño de interacción, animación aplicada a gameplay, manejo de recursos para iluminación.
+        </div>
+      </article>
+
+      <!-- 2. BD distribuidas -->
+      <article class="card">
+        <div class="card-head">
+          <img class="img" src="./img/db-distribuidas.png" alt="Arquitectura de bases de datos distribuidas">
+          <h3>Sistema de bases de datos distribuidas (PostgreSQL + Oracle21)</h3>
+        </div>
+        <div class="desc">
+          <p>
+            Sistema distribuido en tres equipos físicos (LAN) con PostgreSQL y Oracle21. Rol: nodo Oracle (conectividad,
+            estrategia de fragmentación, integración con el clúster). Pruebas de consistencia y acceso distribuido,
+            documentación de topología y particionado, resolución de conflictos de replicación.</p>
+            <i>Habilidades:</i> administración de BD, diseño de fragmentación/particionado, redes en entornos distribuidos.
+        </div>
+      </article>
+
+      <!-- 3. Real Time Phishing -->
+      <article class="card">
+        <div class="card-head">
+          <img class="img" src="./img/phishing.png" alt="Laboratorio de phishing en tiipo real">
+          <h3>Recreación de un Ataque de Real Time Phishing</h3>
+        </div>
+        <div class="desc">
+          <p>
+            Laboratorio académico para estudiar phishing en tiempo real: análisis de vectores (phishing, DNS spoofing,
+            fallas en autenticación Wi-Fi) y exfiltración de credenciales. Uso del Social-Engineer Toolkit (SET) para
+            generar sitios controlados y evaluar comportamiento de usuarios en pruebas reales.</p>
+            <i>Habilidades:</i> análisis de amenazas, herramientas de ingeniería social, documentación de pruebas.
+        </div>
+      </article>
+
+      <!-- 4. Galeto -->
+      <article class="card">
+        <div class="card-head">
+          <img class="img" src="./img/galeto.png" alt="Galería social con votación">
+          <h3>Página web de Galeto — Galería social con votación</h3>
+        </div>
+        <div class="desc">
+          <p>
+            Galería web donde usuarios ven imágenes y votan entre tres opciones musicales por imagen. Pruebas no
+            funcionales con JMeter: rendimiento, concurrencia y carga; identificación de cuellos de botella y
+            recomendaciones de configuración.</p>
+            <i>Habilidades:</i> pruebas de rendimiento, calidad web, análisis de comportamiento.
+        </div>
+      </article>
+
+      <!-- 5. Bad Ice Cream -->
+      <article class="card">
+        <div class="card-head">
+          <img class="img" src="./img/bad-ice-cream.png" alt="Recreación del juego Bad Ice Cream">
+          <h3>Recreación del juego “Bad Ice Cream”</h3>
+        </div>
+        <div class="desc">
+          <p>
+            Participación en diseño de interfaz gráfica y sistema de gestión de ventanas (menús, cambio de pantallas
+            y estados de juego). Implementación de navegación visual y pruebas de usabilidad para experiencia consistente.</p>
+            <i>Habilidades:</i> diseño de GUI, control de estados, UX en juegos.
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="container">
+    <hr>
+    <p><a class="backtop" href="#contacto">Volver arriba</a></p>
+  </section>
+
+</body>
 </html>
